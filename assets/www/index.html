@@ -1,0 +1,117 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>School Schedule</title>
+    <link type="text/css" rel="stylesheet" media="screen" href="main.css">
+        <style type="text/css" media="screen">@import "jqtouch/jqtouch.css";</style>
+        <style type="text/css" media="screen">@import "themes/default/theme.css";</style>
+    <script type="text/javascript" src="phonegap.js"></script>
+        <script src="jqtouch/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
+
+
+    <script type="text/javascript" src="schedule.js"></script>
+
+
+    <script type="text/javascript">
+      var jQT=$.jQTouch({
+      icon: 'schoolsched.png'}
+      );
+
+      window.onload=mainfunc
+    </script>
+  </head>
+  <body>
+
+
+
+<!-- Page 1 -- main schedule countdown -->
+<div id="main">
+<div class="toolbar">
+<h1>School Sched</h1>
+<a href="#config" class="button leftButton">Config</a>
+<a href="#choosesched" class="button">Select</a>
+</div>
+<center>
+<table border = 1>
+<tr><th id=schedname colspan=2 class=medium> </th></tr>
+<tr><th id=periodlabel colspan=2 class=medium> </th></tr>
+<tr>
+<td align=center><div id=into class=large>into</div></td>
+<td align=center><div id=left class=large>left</div></td>
+</tr>
+<tr>
+<td align=center><div id=linto class=medium>into</div></td>
+<td align=center><div id=lleft class=medium>left</div></td>
+</tr>
+<tr><td colspan=2><div id="time" class=large >time</div></tr>
+</table>
+</center>
+
+</div>.
+
+
+
+<!-- Page 2 -- full schedule -->
+<div id="fullsched">
+<div class="toolbar">
+<h1 id="fullschedname">School Sched</h1>
+<a href="#choosesched" class="button">Select</a>
+</div>
+<div id="fullscheddata">
+The full schedule
+</div>
+</div>
+
+<!-- Page 3 -- choose schedule -->
+<div id="choosesched">
+<div class="toolbar">
+<h1>Select Sched</h1>
+<a href="#" class="back">back</a>
+</div>
+<div id="choices">
+</div>
+</div>
+
+<!-- Page 4 -- config -->
+<div id="config">
+<div class="toolbar">
+<h1>Configure</h1>
+<a href="#help" class="button">Help</a>
+<a href="#" class="back">back</a>
+</div>
+
+Enter url of Google Spreadsheet published as csv.
+<br/>
+<form method="post">
+URL:<br/>
+ <textarea rows=8 cols=30 id="url"></textarea>
+
+<input type="submit" class="submit"  name="action" value="Fetch Scheds"/>
+</form>
+</div>
+<div id="configstatus">
+</div>
+
+  </body>
+</html>
+
+<!-- Page 5 -- Help -->
+<div id="help">
+<div class="toolbar">
+<a href="#" class="back">back</a>
+</div>
+<p>Look up the matching Chrome App (search for schoolsched on the chrome app marketplace) for more details on the spreadsheet</p>
+<br/>
+<p>The program is preconfigured with Stuyvesant High School's bell schedules.</p>
+<br/>
+<p>Publish as a web page, select CSV link and copy it to the entry box on the app's config page. Click "Fetch Scheds"</p>
+<br/>
+<p>An alert box will tell you the data has been loaded.</p>
+<br/>
+<p> You can swipe to switch between the countdown and day's schedule screens.</p>
+<br/>
+<p>The help screen is linked to the config screen.</p>
+
+</div>
